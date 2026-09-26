@@ -9,126 +9,79 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
-
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
+            background: linear-gradient(135deg, #0b3c5d 0%, #1d2731 100%);
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
         }
-
         .container {
-            background-color: #1e293b;
-            border-radius: 16px;
-            padding: 32px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 520px;
             width: 100%;
-            max-width: 440px;
             text-align: center;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #38bdf8;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-
-        .description {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #cbd5e1;
-            margin-bottom: 24px;
-        }
-
-        .info-box {
-            background-color: #0f172a;
-            border-radius: 8px;
+        .logo-container {
+            background: #ffffff;
             padding: 12px;
-            margin-bottom: 20px;
-            text-align: left;
-            border-left: 4px solid #38bdf8;
-        }
-
-        .info-item {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            margin-bottom: 4px;
-        }
-
-        .info-item strong {
-            color: #f8fafc;
-        }
-
-        .copy-box {
-            display: flex;
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 8px 12px;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            gap: 12px;
-        }
-
-        .key-text {
-            font-size: 0.95rem;
-            color: #f8fafc;
-            font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .btn-copy {
-            background-color: #38bdf8;
-            color: #0f172a;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            white-space: nowrap;
-        }
-
-        .btn-copy:hover {
-            background-color: #7dd3fc;
-        }
-
-        .btn-copy:active {
-            transform: scale(0.98);
-        }
-
-        .instruction {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            margin-bottom: 16px;
-        }
-
-        .qrcode-wrapper {
-            background-color: #ffffff;
-            padding: 16px;
             border-radius: 12px;
             display: inline-block;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
         }
-
+        .logo {
+            max-width: 130px;
+            height: auto;
+            display: block;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .info-row {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        .info-row strong {
+            color: #00d2ff;
+        }
+        .qrcode-wrapper {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
         .qrcode-wrapper img {
             display: block;
             max-width: 220px;
@@ -136,61 +89,87 @@
             height: auto;
         }
 
-        .btn-back {
-            display: inline-flex;
+        .copy-box {
+            display: flex;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
             align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .key-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00d2ff;
+            font-weight: bold;
+            font-size: 0.95rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 75%;
+        }
+        .btn-copy {
+            background: #328cc1;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .btn-copy:hover {
+            background: #00d2ff;
+        }
+        .back-nav {
+            display: inline-block;
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
-
-        .btn-back:hover {
-            color: #f8fafc;
-        }
-
-        .btn-back svg {
-            margin-right: 8px;
+        .back-nav:hover {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Alimente esse Sonho</h1>
-        <div class="subtitle">APANI ITU</div>
-        
-        <p class="description">
-            Sua contribuição apoia de forma direta o treinamento de nossos jovens talentos para o alto rendimento nas piscinas de Itu para o Mundo.
-        </p>
-
-        <div class="info-box">
-            <div class="info-item"><strong>Instituição:</strong> Associação de Pais e Amigos da Natação Ituana - APANI ITU</div>
-            <div class="info-item"><strong>Banco:</strong> SICOOB</div>
-        </div>
-
-        <!-- Interface Dinâmica do Copia e Cola -->
-        <div class="copy-box">
-            <span class="key-text" id="pixDisplay">doacoes@apaniitu.org.br</span>
-            <button class="btn-copy" onclick="copyPixKey()" id="btnCopy">Copiar Chave</button>
-        </div>
-
-        <p class="instruction">Ou aponte a câmera do aplicativo do seu banco:</p>
-        
-        <div class="qrcode-wrapper">
-            <!-- Caminho atualizado apontando para a imagem na raiz do repositório -->
-            <img src="./QRCODEPIX.png" alt="QR Code Pix Oficial APANI ITU">
-        </div>
-
-        <div>
-            <a href="#" class="btn-back" onclick="window.history.back(); return false;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Retornar à página anterior
-            </a>
-        </div>
+<div class="container">
+    <div class="logo-container">
+        <!-- Exibição local estabilizada -->
+        <img src="./logo.jpg" alt="APANI ITU" class="logo">
+    </div>
+    
+    <h1>Alimente esse Sonho</h1>
+    <p class="subtitle">Sua contribuição apoia de forma direta o treinamentos de nossos jovens taletos para o alto rendimento nas piscinas de Itu para o Mundo.</p>
+    
+    <div class="info-card">
+          <div class="info-item"><strong>Instituição:</strong> Associação de Pais e Amigos da Natação Ituana - APANI ITU</div>
+          <div class="info-item"><strong>Banco:</strong> SICOOB</div>
     </div>
 
-    <script>
+    <!-- Interface Dinâmica do Copia e Cola -->
+    <div class="copy-box">
+        <span class="key-text" id="pixKey">doacoes@apaniitu.org.br</span>
+        <button class="btn-copy" onclick="copyPixKey()" id="btnCopy">Copiar Chave</button>
+    </div>
+
+    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">Ou aponte a câmera do aplicativo do seu banco:</p>
+    
+     <div class="qrcode-wrapper">
+            <!-- Caminho atualizado apontando para a imagem na raiz do repositório -->
+            <img src="./QRCODEPIX.png" alt="QR Code Pix Oficial APANI ITU">
+     </div>
+
+    <div>
+        <a href="index.html" class="back-nav">← Retornar à página anterior</a>
+    </div>
+</div>
+
+ <script>
     // Código oficial Pix Copia e Cola descriptografado do QR Code enviado para a função do botão
     const pixCopiaColaOficial = "00020126450014br.gov.bcb.pix0123doacoes@apaniitu.org.br5204000053039865802BR5909APANI ITU6003ITU62070503***6304334C";
 
@@ -211,5 +190,6 @@
         });
     }
     </script>
+
 </body>
 </html>
