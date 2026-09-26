@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoie a Natação - APANI ITU</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0b3c5d 0%, #1d2731 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .logo-container {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .logo {
+            max-width: 130px;
+            height: auto;
+            display: block;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .info-row {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        .info-row strong {
+            color: #00d2ff;
+        }
+        .qrcode-wrapper {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        /* Correção para garantir exibição contínua do QR Code */
+        .qrcode-wrapper img {
+            display: block;
+            width: 180px;
+            height: 180px;
+        }
+        .copy-box {
+            display: flex;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .key-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00d2ff;
+            font-weight: bold;
+            font-size: 0.95rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 75%;
+        }
+        .btn-copy {
+            background: #328cc1;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .btn-copy:hover {
+            background: #00d2ff;
+        }
+        .back-nav {
+            display: inline-block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .back-nav:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-container">
+        <!-- Exibição local estabilizada -->
+        <img src="./logo.jpg" alt="APANI ITU" class="logo">
+    </div>
+    
+    <h1>Alimente esse Sonho</h1>
+    <p class="subtitle">Sua contribuição apoia de forma direta o treinamentos de nossos jovens taletos para o alto rendimento nas piscinas de Itu para o Mundo.</p>
+    
+    <div class="info-card">
+        <div class="info-row"><strong>Instituição:</strong> APANI ITU</div>
+        <div class="info-row"><strong>Banco parceiro:</strong> SICOOB</div>
+    </div>
+
+    <!-- Interface Dinâmica do Copia e Cola -->
+    <div class="copy-box">
+        <span class="key-text" id="pixKey">doacoes@apaniitu.org.br</span>
+        <button class="btn-copy" onclick="copyPixKey()" id="btnCopy">Copiar Chave</button>
+    </div>
+
+    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px;">Ou aponte a câmera do aplicativo do seu banco:</p>
+    
+    <div class="qrcode-wrapper">
+        <!-- Renderização estrita usando codificação URI para evitar quebras de exibição -->
+        <img src="https://qrserver.com" alt="QR Code Pix">
+    </div>
+
+    <div>
+        <a href="index.html" class="back-nav">← Retornar à página anterior</a>
+    </div>
+</div>
+
+<script>
+    // Função nativa JavaScript para área de transferência
+    function copyPixKey() {
+        const keyText = document.getElementById('pixKey').innerText;
+        const btn = document.getElementById('btnCopy');
+        
+        navigator.clipboard.writeText(keyText).then(() => {
+            btn.innerText = 'Copiado! ✓';
+            btn.style.backgroundColor = '#22c55e';
+            
+            setTimeout(() => {
+                btn.innerText = 'Copiar Chave';
+                btn.style.backgroundColor = '#328cc1';
+            }, 2500);
+        }).catch(err => {
+            console.error('Erro ao copiar: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
